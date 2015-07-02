@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.apsquared.gametest</id>
+    <name>GameTest</name>
+    <version>1.0</version>
+    <publisher>fsa317</publisher>
+    <url>http://www.tvfoodmaps.com</url>
+    <description>undefined</description>
+    <copyright>2015 by fsa317</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>d73e0eb7-f992-44ff-9bbb-916d4f3556af</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="iphone">io.platino</module>
+        <module platform="android">io.platino</module>
+    </modules>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">true</target>
+    </deployment-targets>
+    <sdk-version>4.0.0.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">55955ab135bd9ad977f0b72b</property>
+</ti:app>
