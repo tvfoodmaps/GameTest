@@ -27,6 +27,7 @@ module.exports = function(win,game){
 	
 	item1.addEventListener('touchmove',function(e){
 		//Ti.API.info("Touch move "+JSON.stringify(e));
+		//this is working better but it's VERY choppy
 		selectedItem.moveCenter(e.sceneX,e.sceneY); 		//tried e.x and e.x*game.screenScale
 		
 	//	item1.x = e.x;
@@ -34,7 +35,8 @@ module.exports = function(win,game){
 	});
 	
 	item1.addEventListener('touchend',function(e){
-		Ti.API.info("touch start of item1"+JSON.stringify(e));
+		//Ti.API.info("touch end of item1"+JSON.stringify(e));
+		selectedItem = null;
 	});
 
 	self.add(item1);
