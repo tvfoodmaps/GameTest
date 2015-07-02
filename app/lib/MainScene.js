@@ -21,14 +21,14 @@ module.exports = function(win,game){
 	var item1 = platino.createSprite({image:'images/item_blue.png', center:{x:game.screen.width/2,y:game.screen.height/2}, height:248, width:248 });
 
 	item1.addEventListener('touchstart',function(e){
-		Ti.API.info("touch start of item1"+JSON.stringify(e));
+		//Ti.API.info("touch start of item1"+JSON.stringify(e));
 		selectedItem = item1;
 	});
 	
 	item1.addEventListener('touchmove',function(e){
-		Ti.API.info("Touch move "+JSON.stringify(e));
-		selectedItem.x=e.sceneX; 		//tried e.x and e.x*game.screenScale
-		selectedItem.y=e.sceneY;
+		//Ti.API.info("Touch move "+JSON.stringify(e));
+		selectedItem.moveCenter(e.sceneX,e.sceneY); 		//tried e.x and e.x*game.screenScale
+		
 	//	item1.x = e.x;
 	//	item1.y = e.y;
 	});

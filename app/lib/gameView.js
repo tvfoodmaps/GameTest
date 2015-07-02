@@ -1,9 +1,9 @@
 module.exports = function(win,firstScene){
 	var platino = require('io.platino');	
 	var game = platino.createGameView({
-		fps:60,                                                 // Game frame rate. Set 30fps for Iphone4, iPad1 and old android devices
-		debug:false,                                            // Enable debug logs
-		usePerspective:true                                    // Sets/gets viewpoint type of the GameView (perspective or orthogonal).
+		fps:30,                                                 // Game frame rate. Set 30fps for Iphone4, iPad1 and old android devices
+		debug:true,                                            // Enable debug logs
+		usePerspective:false                                    // Sets/gets viewpoint type of the GameView (perspective or orthogonal).
 	});
 	game.color(1, 1, 1);                                    	 // set initial background color to white
 	
