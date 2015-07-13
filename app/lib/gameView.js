@@ -21,19 +21,7 @@ module.exports = function(win,firstScene){
 		Ti.API.info("game screen size before: " + game.screen.width + "x" + game.screen.height);
 		game.screen = {width:game.size.width / screenScale, height:game.size.height / screenScale};
 		Ti.API.info("game screen size after: " + game.screen.width + "x" + game.screen.height);
-	/*
-		if(OS_ANDROID){
-		
-			game.touchScaleX = game.screen.width  / Titanium.Platform.displayCaps.platformWidth;
-			game.touchScaleY = game.screen.height / Titanium.Platform.displayCaps.platformHeight;
-			
-		}else{
-			
-			game.touchScaleX = game.screen.width  / game.size.width;
-			game.touchScaleY = game.screen.height / game.size.height;
-			
-		};
-		*/
+
 	
 		game.screenScale = game.screen.height / game.TARGET_SCREEN.height;
 		

@@ -17,32 +17,54 @@ module.exports = function(win,game){
 	//game.setupSpriteSize(background);
 	self.add(background);
 	
+	var DragItem = require('DragItem');
+	var dItem1 = new DragItem(1800,300,game,self);
+	var dItem2 = new DragItem(1500,600,game,self);
+	dItem2.alpha=.75;
+
+	var dropZones = [];	
+	var DropItem = require('DropItem');
+	var drop1 = new DropItem(450,300,game,self);
+	var drop2 = new DropItem(400,700,game,self);
+
+	dropZones.push(drop1);
+	dropZones.push(drop2);
+	
 	var selectedItem;
-	var item1 = platino.createSprite({image:'images/item_blue.png', center:{x:game.screen.width/2,y:game.screen.height/2}, height:248, width:248 });
 
-	item1.addEventListener('touchstart',function(e){
-		//Ti.API.info("touch start of item1"+JSON.stringify(e));
-		selectedItem = item1;
-	});
+	self.setSelectedItem=function(item){
+		selectedItem = item;
+	};
 	
-	item1.addEventListener('touchmove',function(e){
+	self.addEventListener('touchmove',function(e){
 		//Ti.API.info("Touch move "+JSON.stringify(e));
-		//this is working better but it's VERY choppy
-		selectedItem.moveCenter(e.sceneX,e.sceneY); 		//tried e.x and e.x*game.screenScale
-		
-	//	item1.x = e.x;
-	//	item1.y = e.y;
+		if (selectedItem)
+			selectedItem.moveCenter(e.x,e.y); 		
 	});
 	
-	item1.addEventListener('touchend',function(e){
-		//Ti.API.info("touch end of item1"+JSON.stringify(e));
-		selectedItem = null;
+	self.addEventListener('touchend',function(e){
+		if (selectedItem){
+			Ti.API.info("touch end of item1"+JSON.stringify(e));
+			var foundZone = false;
+			for (var i = 0; i < dropZones.length; i++){
+				if (dropZones[i].contains(e.x,e.y)){
+					alert("Dropped!");
+					foundZone = true;
+				}
+			}
+			if (!foundZone){
+				selectedItem.returnHome();
+			}
+			selectedItem = null;
+		}
 	});
 
-	self.add(item1);
-
+	self.add(dItem1);
+	self.add(dItem2);
+	self.add(drop1);
+	self.add(drop2);
 	// Scene background color to white :
 
-	self.color(1, 1, 1);
+	self.color(1, 5, 1);
 	return self;
 };
