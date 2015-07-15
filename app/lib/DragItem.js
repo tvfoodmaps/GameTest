@@ -5,7 +5,7 @@ module.exports = function(x,y,game,scene){
 	var startx = game.oX(x);
 	var starty = y;
 	
-	var item = platino.createSprite({image:'images/item_blue.png', x:startx,y:starty,z:2,height:248, width:248 });
+	var item = platino.createSprite({image:'images/bottle.png', x:startx,y:starty,z:5 });
 
 	item.addEventListener('touchstart',function(e){
 		Ti.API.info("touch start of item1"+JSON.stringify(e));

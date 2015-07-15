@@ -17,12 +17,17 @@ module.exports = function(win,game){
 	//game.setupSpriteSize(background);
 	self.add(background);
 	
+	var shelf = platino.createSprite({image:'images/shelf.png', x:game.oX(0), y:850,z:2 });
+	//game.setupSpriteSize(background);
+	self.add(shelf);
+	
+	
 	
 	Ti.API.info("background width: "+background.width);
 	var DragItem = require('DragItem');
-	var dItem1 = new DragItem(2048-248,300,game,self);
-	var dItem2 = new DragItem(1200,600,game,self);
-	dItem2.alpha=.75;
+	var dItem1 = new DragItem(50,1200,game,self);
+	var dItem2 = new DragItem(300,1200,game,self);
+	
 
 	var dropZones = [];	
 	var DropItem = require('DropItem');
