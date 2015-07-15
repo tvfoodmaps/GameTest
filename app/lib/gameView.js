@@ -34,6 +34,7 @@ module.exports = function(win,firstScene){
 
 	};
 
+  //test comment
 	game.oX=function(x){
 		return x+game.offset;
 	};
