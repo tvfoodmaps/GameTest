@@ -12,9 +12,13 @@ module.exports = function(win,firstScene){
 	function onGameActivated(e){
 	 
 	 	Ti.API.info('Game Onload');
-		//updateScreenSize();                                 // Set game screen size
-		
-		/* is this code needed? */
+	/*
+	 * [INFO] :   Screen scale 0.5
+[INFO] :   view size: 1024x768
+[INFO] :   game screen size before: 2048x1536
+[INFO] :   game screen size after: 2048x1536
+
+	 */
 		var screenScale = game.size.height / game.TARGET_SCREEN.height;
 		Ti.API.info("Screen scale "+screenScale);   
 		Ti.API.info("view size: " + game.size.width + "x" + game.size.height);
@@ -22,6 +26,7 @@ module.exports = function(win,firstScene){
 		game.screen = {width:game.size.width / screenScale, height:game.size.height / screenScale};
 		Ti.API.info("game screen size after: " + game.screen.width + "x" + game.screen.height);
 
+		game.offset = (game.screen.width - game.TARGET_SCREEN.width)/2;
 	
 		game.screenScale = game.screen.height / game.TARGET_SCREEN.height;
 		
@@ -33,6 +38,10 @@ module.exports = function(win,firstScene){
 		game.start();                                       // Starts the game
 		
 		
+	};
+	
+	game.oX=function(x){
+		return x+game.offset;
 	};
 	
 	game.addEventListener('onload', onGameActivated);
