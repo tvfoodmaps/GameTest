@@ -13,7 +13,7 @@ module.exports = function(win,game){
 	var self = platino.createScene();
 	self.addEventListener('activated', onSceneActivated);
 
-	var background = platino.createSprite({image:'images/Background.png', center:{x:game.screen.width/2,y:game.screen.height/2}, height:1536, width:2048 });
+	var background = platino.createSprite({image:'images/Background.png', x:game.oX(0), y:0, height:1536, width:2048 });
 	//game.setupSpriteSize(background);
 	self.add(background);
 	
