@@ -22,7 +22,7 @@ module.exports = function(x,y,game,scene){
 	};
 
 	item.isPourItem=function(){
-		return false;
+		return true;
 	};
 
 	return item;
